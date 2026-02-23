@@ -20,7 +20,7 @@ console.log(numbers);
 numbers.pop(2);
 console.log(numbers);
 
-(numbers, pop(3));
+numbers.pop(3);
 console.log(numbers);
 
 numbers.pop(4);
