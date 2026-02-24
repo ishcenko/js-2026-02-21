@@ -29,3 +29,8 @@ console.log(numbers);
 function multiply() {
   console.log(multiply);
 }
+multiply();
+
+let a = 5;
+let b = "5";
+console.log(a == b);
