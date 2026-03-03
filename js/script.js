@@ -137,11 +137,37 @@
 // }
 // console.log(randomInt);
 
-const colors = ["tomato", "black", "blue", "red"];
-const max = colors.length - 1;
-const min = 0;
+// const colors = ["tomato", "black", "blue", "red"];
+// const max = colors.length - 1;
+// const min = 0;
 
-const index = Math.round(Math.random() * (max - min) + min);
-const color = colors[index];
-console.log(color);
-document.body.style.backgroundColor = color;
+// const index = Math.round(Math.random() * (max - min) + min);
+// const color = colors[index];
+// console.log(color);
+// document.body.style.backgroundColor = color;
+
+// const userAnsver = prompt("Name JS?");
+// if (userAnsver === "ECMAScriptECMAScriptECMAScript") {
+//   alert("Good");
+// } else {
+//   alert("Nooooooooooo");
+// }
+// console.log(userAnsver);
+// userAnsver === "ECMAScript" ? alert("Good") : alert("Noooo");
+
+// let msg = userAnsver === "ECMAScript" ? "Goood" : "Nooooo";
+// alert(msg);
+
+const hours = 14;
+const minutes = 0;
+let timeStr = "";
+if (minutes === 0) {
+  timeStr = `${hours} г. 00 хв.`;
+}
+if (minutes <= 9) {
+  timeStr = `${hours} г. 0${minutes} хв.`;
+} else {
+  timeStr = `${hours} г. ${minutes} хв.`;
+}
+
+console.log(timeStr);
