@@ -158,16 +158,84 @@
 // let msg = userAnsver === "ECMAScript" ? "Goood" : "Nooooo";
 // alert(msg);
 
-const hours = 14;
-const minutes = 0;
-let timeStr = "";
-if (minutes === 0) {
-  timeStr = `${hours} г. 00 хв.`;
-}
-if (minutes <= 9) {
-  timeStr = `${hours} г. 0${minutes} хв.`;
-} else {
-  timeStr = `${hours} г. ${minutes} хв.`;
+// const hours = 14;
+// const minutes = 0;
+// let timeStr = "";
+// if (minutes === 0) {
+//   timeStr = `${hours} г. 00 хв.`;
+// }
+// if (minutes <= 9) {
+//   timeStr = `${hours} г. 0${minutes} хв.`;
+// } else {
+//   timeStr = `${hours} г. ${minutes} хв.`;
+// }
+
+// console.log(timeStr);
+
+// const a = 184;
+// const b = 100;
+// let msg = Number(Math.max(a, b));
+// if (a >= 100 && b >= 100) {
+//   if (a > b) {
+//     console.log(a);
+//   } else console.log(`${b + 512}`);
+//   console.log(msg);
+// }
+
+// let result = a > 100 && b > 100 ? (a > b ? a : b) : b + 512;
+// console.log(result);
+
+// const daysUn = 2;
+
+// switch (daysUn) {
+//   case 0: {
+//     console.log("Сьогодні");
+//     break;
+//   }
+//   case 1: {
+//     console.log("Завтра");
+//     break;
+//   }
+//   case 2: {
+//     console.log("Післязавтра");
+//     break;
+//   }
+//   default: {
+//     console.log("Дата у майбутньому");
+//   }
+// }
+
+// const max = 100;
+// const min = 1;
+// for (let i = min; i <= max; i += 1) {
+//   if (i % 5 === 0) console.log(i);
+// }
+
+// const max = 100;
+// const min = 10;
+// for (let i = max; i >= min; i -= 1) {
+//   if (i % 5 === 0) console.log(i);
+// }
+
+// const max = 100;
+// const min = 10;
+// for (let i = min; i <= max; i += 1) {
+//   if (i % 5 !== 0) continue;
+//   console.log(i);
+// }
+
+const maxBr = 100;
+const minBr = 11;
+for (let i = minBr; i <= maxBr; i += 1) {
+  if (i % 5 === 0) break;
+  console.log(i);
 }
 
-console.log(timeStr);
+// const max = 100000;
+// const min = 1;
+// let total = 0;
+// for (let i = max; i >= min; i -= 1) {
+//   console.log(i + 1);
+//   total += i;
+// }
+// console.log(total ** total);
