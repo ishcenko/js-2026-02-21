@@ -224,12 +224,12 @@
 //   console.log(i);
 // }
 
-const maxBr = 100;
-const minBr = 11;
-for (let i = minBr; i <= maxBr; i += 1) {
-  if (i % 5 === 0) break;
-  console.log(i);
-}
+// const maxBr = 100;
+// const minBr = 11;
+// for (let i = minBr; i <= maxBr; i += 1) {
+//   if (i % 5 === 0) break;
+//   console.log(i);
+// }
 
 // const max = 100000;
 // const min = 1;
@@ -239,3 +239,20 @@ for (let i = minBr; i <= maxBr; i += 1) {
 //   total += i;
 // }
 // console.log(total ** total);
+
+// const login = prompt("ВВедіть логін")?.trim();
+// console.log(typeof login);
+// console.log(login);
+
+// if (login === "Admin") {
+//   const password = prompt("Password enter");
+//   if (password === "I admin") {
+//     console.log("Good");
+//   } else console.log("No password");
+//   console.log("Запитати пароль");
+// } else if (!login) // (login === "" || login === undefined)
+// {
+//   console.log("Скасовано");
+// } else {
+//   console.log("Я вас не знаю");
+// }
