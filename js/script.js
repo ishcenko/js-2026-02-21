@@ -256,3 +256,97 @@
 // } else {
 //   console.log("Я вас не знаю");
 // }
+
+const starts = 1;
+let price;
+
+if (starts === 1) {
+  price = 20;
+} else if (starts === 2) {
+  price = 40;
+} else if (starts === 3) {
+  price = 60;
+} else if (starts === 4) {
+  price = 80;
+} else if (starts === 5) {
+  price = 100;
+} else {
+  console.log("Такої кількості зірок немає");
+}
+console.log("else if", price);
+
+switch (starts) {
+  case 1: {
+    price = 20;
+    break;
+  }
+  case 2: {
+    price = 40;
+    break;
+  }
+  case 3: {
+    price = 60;
+    break;
+  }
+  case 4: {
+    price = 80;
+    break;
+  }
+  case 5: {
+    price = 100;
+    break;
+  }
+  default:
+    console.log("Такої кількості зірок немає");
+}
+console.log("Switch", price);
+
+if (starts === 1 || starts === 2) {
+  price = 20;
+} else if (starts === 3 || starts === 4) {
+  price = 40;
+} else {
+  console.log("Такої кількості зірок немає");
+}
+console.log("else is ||", price);
+
+switch (starts) {
+  case 1:
+  case 2: {
+    price = 20;
+    break;
+  }
+  case 3:
+  case 4: {
+    price = 60;
+    break;
+  }
+  case 5: {
+    price = 100;
+    break;
+  }
+  default:
+    console.log("Такої кількості зірок немає");
+}
+console.log("switch||", price);
+
+const option = 4;
+let message = "";
+switch (option) {
+  case 1: {
+    message = "Ви зможете забрати товар завтра з 12.00";
+    break;
+  }
+  case 2: {
+    message = "Ви зможете замовити доставку товару завтра з 08.00";
+    break;
+  }
+  case 3: {
+    message = "Посилка буде відправлена сьогодні";
+    break;
+  }
+  default: {
+    message = "З вами зв'яжеться менеджер-консультант";
+  }
+}
+console.log("switch", message);
