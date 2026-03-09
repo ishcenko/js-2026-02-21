@@ -257,96 +257,145 @@
 //   console.log("Я вас не знаю");
 // }
 
-const starts = 1;
-let price;
+// const starts = 1;
+// let price;
 
-if (starts === 1) {
-  price = 20;
-} else if (starts === 2) {
-  price = 40;
-} else if (starts === 3) {
-  price = 60;
-} else if (starts === 4) {
-  price = 80;
-} else if (starts === 5) {
-  price = 100;
-} else {
-  console.log("Такої кількості зірок немає");
-}
-console.log("else if", price);
+// if (starts === 1) {
+//   price = 20;
+// } else if (starts === 2) {
+//   price = 40;
+// } else if (starts === 3) {
+//   price = 60;
+// } else if (starts === 4) {
+//   price = 80;
+// } else if (starts === 5) {
+//   price = 100;
+// } else {
+//   console.log("Такої кількості зірок немає");
+// }
+// console.log("else if", price);
 
-switch (starts) {
-  case 1: {
-    price = 20;
-    break;
-  }
-  case 2: {
-    price = 40;
-    break;
-  }
-  case 3: {
-    price = 60;
-    break;
-  }
-  case 4: {
-    price = 80;
-    break;
-  }
-  case 5: {
-    price = 100;
-    break;
-  }
-  default:
-    console.log("Такої кількості зірок немає");
-}
-console.log("Switch", price);
+// switch (starts) {
+//   case 1: {
+//     price = 20;
+//     break;
+//   }
+//   case 2: {
+//     price = 40;
+//     break;
+//   }
+//   case 3: {
+//     price = 60;
+//     break;
+//   }
+//   case 4: {
+//     price = 80;
+//     break;
+//   }
+//   case 5: {
+//     price = 100;
+//     break;
+//   }
+//   default:
+//     console.log("Такої кількості зірок немає");
+// }
+// console.log("Switch", price);
 
-if (starts === 1 || starts === 2) {
-  price = 20;
-} else if (starts === 3 || starts === 4) {
-  price = 40;
-} else {
-  console.log("Такої кількості зірок немає");
-}
-console.log("else is ||", price);
+// if (starts === 1 || starts === 2) {
+//   price = 20;
+// } else if (starts === 3 || starts === 4) {
+//   price = 40;
+// } else {
+//   console.log("Такої кількості зірок немає");
+// }
+// console.log("else is ||", price);
 
-switch (starts) {
-  case 1:
-  case 2: {
-    price = 20;
-    break;
-  }
-  case 3:
-  case 4: {
-    price = 60;
-    break;
-  }
-  case 5: {
-    price = 100;
-    break;
-  }
-  default:
-    console.log("Такої кількості зірок немає");
-}
-console.log("switch||", price);
+// switch (starts) {
+//   case 1:
+//   case 2: {
+//     price = 20;
+//     break;
+//   }
+//   case 3:
+//   case 4: {
+//     price = 60;
+//     break;
+//   }
+//   case 5: {
+//     price = 100;
+//     break;
+//   }
+//   default:
+//     console.log("Такої кількості зірок немає");
+// }
+// console.log("switch||", price);
 
-const option = 4;
-let message = "";
-switch (option) {
-  case 1: {
-    message = "Ви зможете забрати товар завтра з 12.00";
-    break;
-  }
-  case 2: {
-    message = "Ви зможете замовити доставку товару завтра з 08.00";
-    break;
-  }
-  case 3: {
-    message = "Посилка буде відправлена сьогодні";
-    break;
-  }
-  default: {
-    message = "З вами зв'яжеться менеджер-консультант";
-  }
+// const option = 4;
+// let message = "";
+// switch (option) {
+//   case 1: {
+//     message = "Ви зможете забрати товар завтра з 12.00";
+//     break;
+//   }
+//   case 2: {
+//     message = "Ви зможете замовити доставку товару завтра з 08.00";
+//     break;
+//   }
+//   case 3: {
+//     message = "Посилка буде відправлена сьогодні";
+//     break;
+//   }
+//   default: {
+//     message = "З вами зв'яжеться менеджер-консультант";
+//   }
+// }
+// console.log("switch", message);
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// console.log(arr.indexOf(10));
+// console.log(arr.includes(85));
+// console.log(arr.includes(8));
+// console.log(arr.join("  "));
+
+// const arrConcat = [1, 2, 3, 4, [5, 6], 7, [8, 9]];
+// const arrCon = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// console.log(arrConcat.concat(arrCon));
+
+// const genre = ["Jazz", "Blues"];
+// console.log(genre);
+
+// genre.push("Rok-n-Rol");
+// console.log(genre[0]);
+// console.log(genre.length - 1);
+// console.log(genre[genre.length - 1]);
+
+// console.log(genre.pop());
+
+// console.log(genre.shift());
+// console.log(genre.splice(0, 1)[0]);
+// // genre.unshift("Country", "Reggat");
+// console.log(genre);
+// genre.splice(0, 0, "Country", "Reggat");
+// console.log(genre);
+// const values = "8 11";
+// const valuesArr = values.split(" ");
+// const a = Number(valuesArr[0]);
+// const b = Number(valuesArr[1]);
+// const square = a * b;
+// console.log(a, b);
+// console.log(square);
+
+const fruits = ["🍎", "🍇", "🍑", "🍌", "🍋"];
+
+for (let i = 0; i < fruits.length; i += 1) {
+  console.log(`${i + 1}: ${fruits[i]}`);
 }
-console.log("switch", message);
+
+for (const fruit of fruits) {
+  console.log(fruit);
+}
+for (const i in fruits) {
+  console.log(`${Number(i) + 1}: ${fruits[i]}`);
+  // console.log(fruit);
+}
