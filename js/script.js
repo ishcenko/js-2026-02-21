@@ -386,16 +386,61 @@
 // console.log(a, b);
 // console.log(square);
 
-const fruits = ["🍎", "🍇", "🍑", "🍌", "🍋"];
+// const fruits = ["🍎", "🍇", "🍑", "🍌", "🍋"];
 
-for (let i = 0; i < fruits.length; i += 1) {
-  console.log(`${i + 1}: ${fruits[i]}`);
+// for (let i = 0; i < fruits.length; i += 1) {
+//   console.log(`${i + 1}: ${fruits[i]}`);
+// }
+
+// for (const fruit of fruits) {
+//   console.log(fruit);
+// }
+// for (const i in fruits) {
+//   console.log(`${Number(i) + 1}: ${fruits[i]}`);
+//   // console.log(fruit);
+// }
+// const string = "Welcom to the future";
+// const stringArr = string.split(" ");
+// console.log(stringArr);
+// stringArr.shift();
+// stringArr.pop();
+// const newArr = stringArr.join(" ");
+// console.log("New Arr:", newArr);
+
+// const string = "Welcom to the future";
+// const reversedStr = string.split("").reverse().join("");
+// console.log(reversedStr);
+
+// const string =
+//   "Що стосується можливостей зберігання та обробки інформації, наше рішення для корпоративного банкінгу принципово відрізняється від існуючих програмних продуктів на українському ринку. 4K-Bank може працювати цілодобово, 365 днів на рік, без зупинок на початок та кінець робочого дня чи технічних зупинок, таких як архівування даних.";
+// let newString = [];
+// const stringArr = string.split("");
+
+// // console.log(stringArr);
+
+// for (let i = stringArr.length - 1; i >= 0; i -= 1) {
+//   console.log(stringArr[i]);
+//   newString.push(stringArr[i]);
+// }
+// newString = newString.join("");
+
+// console.log(newString);
+
+const langs = ["python", "javascript", "c++", "haskel", "php", "ruby"];
+
+for (let i = 0; i < langs.length - 1; i += 1) {
+  console.log(`Element: ${langs[i]} | i:${i}`);
+  for (let j = i + 1; j < langs.length; j += 1) {
+    console.log(`El: ${langs[j]} | j:${j}`);
+    if (langs[i][0] > langs[j][0]) {
+      let temp = langs[i];
+      langs[i] = langs[j];
+      langs[j] = temp;
+      console.log("TEMP", temp);
+    }
+  }
+  console.log("\n");
 }
 
-for (const fruit of fruits) {
-  console.log(fruit);
-}
-for (const i in fruits) {
-  console.log(`${Number(i) + 1}: ${fruits[i]}`);
-  // console.log(fruit);
-}
+console.log("FOR:", langs);
+console.log("SORT:", langs.sort());
