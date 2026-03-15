@@ -426,21 +426,189 @@
 
 // console.log(newString);
 
-const langs = ["python", "javascript", "c++", "haskel", "php", "ruby"];
+// const langs = ["python", "javascript", "c++", "haskel", "php", "ruby"];
 
-for (let i = 0; i < langs.length - 1; i += 1) {
-  console.log(`Element: ${langs[i]} | i:${i}`);
-  for (let j = i + 1; j < langs.length; j += 1) {
-    console.log(`El: ${langs[j]} | j:${j}`);
-    if (langs[i][0] > langs[j][0]) {
-      let temp = langs[i];
-      langs[i] = langs[j];
-      langs[j] = temp;
-      console.log("TEMP", temp);
-    }
-  }
-  console.log("\n");
+// for (let i = 0; i < langs.length - 1; i += 1) {
+//   console.log(`Element: ${langs[i]} | i:${i}`);
+//   for (let j = i + 1; j < langs.length; j += 1) {
+//     console.log(`El: ${langs[j]} | j:${j}`);
+//     if (langs[i][0] > langs[j][0]) {
+//       let temp = langs[i];
+//       langs[i] = langs[j];
+//       langs[j] = temp;
+//       console.log("TEMP", temp);
+//     }
+//   }
+//   console.log("\n");
+// }
+
+// console.log("FOR:", langs);
+// console.log("SORT:", langs.sort());
+
+// function calcBMI(weight, height) {
+//   weight = convertToDecimal(weight);
+//   height = convertToDecimal(height);
+
+// weight = Number(weight.replace(",", "."));
+// height = Number(height.replace(",", "."));
+
+// const result = weight / (height * height);
+// console.log(weight);
+// console.log(height);
+// console.log(result.toFixed(1));
+// return getFixedNumber(result);
+// }
+// function convertToDecimal(str) {
+//   return Number(str.replace(",", "."));
+// }
+
+// function getFixedNumber(num) {
+//   return Math.round(num * 10) / 10;
+//   // return Number(num.toFixed(1));
+// }
+
+// const bmi = calcBMI("88,3", "1.75");
+// console.log(bmi);
+
+// const bmi2 = calcBMI("68,3", "1.33");
+// console.log(bmi2);
+
+// const bmi3 = calcBMI("98,3", "1.79");
+// console.log(bmi3);
+
+// const bmi4 = calcBMI("99,3", "1.85");
+// console.log(bmi4);
+
+// const bmi5 = calcBMI("81,3", "1.55");
+// console.log(bmi5);
+
+// const bmi6 = calcBMI("80,3", "1.95");
+// console.log(bmi6);
+
+// const bmi7 = calcBMI("88,3", "1.7");
+// console.log(bmi7);
+
+// function min(a, b) {
+//   // return Math.min(a, b);
+//   return a < b ? a : b;
+// }
+
+// console.log(min(2, -5));
+// console.log(min(-6, -5));
+// console.log(min(12, -75));
+// console.log(min(2, 0));
+// console.log(min(24, -5));
+// console.log(min(2, 5));
+// console.log(min(-72, -15));
+
+// function findLargestNumbers(numbers) {
+//   let max = numbers[0];
+//   for (const num of numbers) {
+//     if (num > max) {
+//       max = num;
+//     }
+//   }
+//   return max;
+// }
+
+// function findMinNumbers(numbers) {
+//   let min = numbers[0];
+//   for (const num of numbers) {
+//     if (num < min) {
+//       min = num;
+//     }
+//   }
+//   return min;
+// }
+
+// console.log(findLargestNumbers([2, 5, 77, 5, 99, 64, 82, 5, 1, 0, 55]));
+
+// console.log(findLargestNumbers([21, 45, 7, 5, 29, 6, 82, 51, 117, 10, 25]));
+
+// console.log(findMinNumbers([2, 5, 77, 5, 99, 64, 82, 5, 1, 0, 55]));
+
+// console.log(findMinNumbers([21, 45, 7, 5, 29, 6, 82, 51, 117, 10, 25]));
+
+// function calAverage() {
+//   console.log(arguments);
+
+//   const amount = arguments.length;
+//   let sum = 0;
+//   for (const num of arguments) {
+//     sum += num;
+//   }
+//   const averageValue = (sum / amount).toFixed(2);
+//   return averageValue;
+// }
+
+// console.log(calAverage(1, 2, 3, 4, 5, 6, 8, 79, 5));
+// console.log(calAverage(1, 2, 3, 4, 5, 46, 8, 79, 5));
+// console.log(calAverage(11, 12, 73, 4, 5, 6, 8, 79, 5));
+// console.log(calAverage(1, 22, 3, 4, 215, 6, 8, 79, 5));
+// console.log(calAverage(1, 22, 3, 4, 52, 6, 84, 79, 5));
+// console.log(calAverage(1, 2, 3, 4, 5, 6, 8, 79, 5));
+// console.log(calAverage(14, 21, 3, 4, 5, 6, 8, 79, 5));
+// console.log(calAverage(1, 2, 3, 4, 55, 745, 6, 8, 79, 5));
+
+//* Example 9 - Колекція курсів (includes, indexOf, push і т. д.)
+// Напишіть функції для роботи з колекцією навчальних курсів courses:
+
+//* addCourse(name) - додає курс до кінця колекції
+//* removeCourse(name) - видаляє курс із колекції
+//* updateCourse(oldName, newName) - змінює ім'я на нове
+
+const courses = ["HTML", "CSS", "JavaScript", "React", "PostgreSQL"];
+
+function addCourse(name) {
+  //   if (courses.includes(name)) {
+  //     console.log("Ви вже маєте такий курс");
+  //     return;
+  //   }
+  //   courses.push(name);
+  //   console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL', 'Express']
+  // }
+
+  if (courses.includes(name))
+    console.log("addCourse - Ви вже маєте такий курс");
+  else courses.push(name);
 }
 
-console.log("FOR:", langs);
-console.log("SORT:", langs.sort());
+function removeCourse(name) {
+  const index = courses.indexOf(name);
+  if (index === -1) {
+    console.log("removeCourse - Курс із таким ім'ям не знайдено");
+  } else courses.splice(index, 1);
+}
+
+function updateCourse(oldName, newName) {
+  const index = courses.indexOf(oldName);
+  if (index === -1) {
+    console.log("updateCourse - Курс із таким ім'ям не знайдено");
+  } else if (courses.includes(newName)) {
+    console.log("Ви вже маєте такий курс");
+  } else {
+    courses[index] = newName;
+  }
+}
+
+// addCourse("Express");
+// addCourse("HTML");
+// addCourse("SQL");
+// addCourse("JS");
+// addCourse("NodeJS");
+// addCourse("CSS"); // 'Ви вже маєте такий курс'
+
+// removeCourse("JavaScript");
+// removeCourse("HTML");
+// removeCourse("SQL");
+// removeCourse("JavaScript");
+// removeCourse("JS");
+// removeCourse("PostgreSQL");
+// removeCourse("NodeJS");
+// removeCourse("CSS");
+
+// console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'Express']
+// removeCourse("Vue"); // 'Курс із таким ім'ям не знайдено'
+
+updateCourse("HTML", "HTML5");
+console.log("updateCourse", courses); // ['Next.js', 'CSS', 'JavaScript', 'PostgreSQL', 'Express']
