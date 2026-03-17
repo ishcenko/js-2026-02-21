@@ -557,39 +557,39 @@
 //* removeCourse(name) - видаляє курс із колекції
 //* updateCourse(oldName, newName) - змінює ім'я на нове
 
-const courses = ["HTML", "CSS", "JavaScript", "React", "PostgreSQL"];
+// const courses = ["HTML", "CSS", "JavaScript", "React", "PostgreSQL"];
 
-function addCourse(name) {
-  //   if (courses.includes(name)) {
-  //     console.log("Ви вже маєте такий курс");
-  //     return;
-  //   }
-  //   courses.push(name);
-  //   console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL', 'Express']
-  // }
+// function addCourse(name) {
+//   if (courses.includes(name)) {
+//     console.log("Ви вже маєте такий курс");
+//     return;
+//   }
+//   courses.push(name);
+//   console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL', 'Express']
+// }
 
-  if (courses.includes(name))
-    console.log("addCourse - Ви вже маєте такий курс");
-  else courses.push(name);
-}
+//   if (courses.includes(name))
+//     console.log("addCourse - Ви вже маєте такий курс");
+//   else courses.push(name);
+// }
 
-function removeCourse(name) {
-  const index = courses.indexOf(name);
-  if (index === -1) {
-    console.log("removeCourse - Курс із таким ім'ям не знайдено");
-  } else courses.splice(index, 1);
-}
+// function removeCourse(name) {
+//   const index = courses.indexOf(name);
+//   if (index === -1) {
+//     console.log("removeCourse - Курс із таким ім'ям не знайдено");
+//   } else courses.splice(index, 1);
+// }
 
-function updateCourse(oldName, newName) {
-  const index = courses.indexOf(oldName);
-  if (index === -1) {
-    console.log("updateCourse - Курс із таким ім'ям не знайдено");
-  } else if (courses.includes(newName)) {
-    console.log("Ви вже маєте такий курс");
-  } else {
-    courses[index] = newName;
-  }
-}
+// function updateCourse(oldName, newName) {
+//   const index = courses.indexOf(oldName);
+//   if (index === -1) {
+//     console.log("updateCourse - Курс із таким ім'ям не знайдено");
+//   } else if (courses.includes(newName)) {
+//     console.log("Ви вже маєте такий курс");
+//   } else {
+//     courses[index] = newName;
+//   }
+// }
 
 // addCourse("Express");
 // addCourse("HTML");
@@ -610,5 +610,185 @@ function updateCourse(oldName, newName) {
 // console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'Express']
 // removeCourse("Vue"); // 'Курс із таким ім'ям не знайдено'
 
-updateCourse("HTML", "HTML5");
-console.log("updateCourse", courses); // ['Next.js', 'CSS', 'JavaScript', 'PostgreSQL', 'Express']
+// updateCourse("HTML", "HTML5");
+// console.log("updateCourse", courses); // ['Next.js', 'CSS', 'JavaScript', 'PostgreSQL', 'Express']
+// const calculateTotalPrice = function (items) {
+//   // console.log(items);
+//   let total = 0;
+//   for (const item of items) {
+//     total += item;
+//   }
+//   return total;
+// };
+
+// console.log(calculateTotalPrice([1, 2, 3, 4, 5]));
+// console.log(calculateTotalPrice([22, 55, 66, 77, 88]));
+// console.log(calculateTotalPrice([1, 21, 31, 14, 25]));
+// console.log(calculateTotalPrice([17, 18, 19, 20, 21]));
+// console.log(calculateTotalPrice([98, 65, 32, 45, 67]));
+// console.log(calculateTotalPrice([18, 25, 36, 48, 61, 73, 84, 95, 10]));
+// console.log(calculateTotalPrice([1, 4, 9, 17, 26, 38, 22, 23, 24, 25, 26]));
+
+// const logItems = function (items) {
+//   for (const item of items) {
+//     console.log(item);
+//   }
+// };
+// logItems(["Mango", "Poly", "Ajax", "Lux", "Jay", "Kong"]);
+// logItems([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+// logItems([
+//   "кришка",
+//   "ложка",
+//   "вилка",
+//   "тарілка",
+//   "сковорідка",
+//   "каструля",
+//   "чайник",
+//   "склянка",
+//   "гриль",
+// ]);
+
+// const logins = ["Ma4ngo", "Poly", "Ajax", "Lux", "Jay", "Kong"];
+// const loginToFind = "a27jax";
+// const message = logins.includes(loginToFind)
+//   ? `Користувач ${loginToFind} знайдений`
+//   : `Користувач ${loginToFind} не знайдений`;
+// console.log(message);
+
+// const findLogin = function (allLogins, loginToFind) {
+// let message = `Користувач ${loginToFind} не знайдений`;
+// console.log(logins);
+// for (const login of allLogins) {
+//   if (login === loginToFind) {
+//     return `Користувач ${loginToFind} знайдений`;
+//   }
+// }
+// return `Користувач ${loginToFind} не знайдений`;
+//   return allLogins.includes(loginToFind)
+//     ? `Користувач ${loginToFind} знайдений`
+//     : `Користувач ${loginToFind} не знайдений`;
+// };
+
+// findLogin(logins);
+// console.log(findLogin(logins, "Ma4ngo"));
+// console.log(findLogin(logins, "Lux"));
+// console.log(findLogin(logins, "Poly"));
+// console.log(findLogin(logins, "Aj2ax"));
+// console.log(findLogin(logins, "Jay"));
+// console.log(findLogin(logins, "Kong"));
+// console.log(findLogin(logins, "a27jax"));
+
+// const numbers = [177, 45, 8, 92, 12, 4, 15, 27, 30];
+// let smallestNumber = numbers[0];
+// for (const number of numbers) {
+//   if (number < smallestNumber) {
+//     smallestNumber = number;
+//   }
+// }
+
+// const findSmallestNumber = function findSmallestNumber(numbers) {
+//   let smallestNumber = numbers[0];
+
+//   for (const number of numbers) {
+//     if (number < smallestNumber) {
+//       smallestNumber = number;
+//     }
+//   }
+//   return smallestNumber;
+// };
+
+// const findBigNumber = function findBigNumber(numbers) {
+//   let biggestNumber = numbers[0];
+
+//   for (const number of numbers) {
+//     if (number > biggestNumber) {
+//       biggestNumber = number;
+//     }
+//   }
+//   return biggestNumber;
+// };
+
+// console.log(
+//   "findSmallestNumber",
+//   findSmallestNumber([177, 45, 8, 92, 12, 4, 15, 27, 30]),
+// );
+// console.log(
+//   "findSmallestNumber",
+//   findSmallestNumber([1, 2, 3, 4, 5, 6, 7, 8, 9]),
+// );
+// console.log(
+//   "findSmallestNumber",
+//   findSmallestNumber([-1, -2, -3, -4, -5, -6, -7, -8, -9]),
+// );
+// console.log("findSmallestNumber", findSmallestNumber([90, 50, 80, 70, 0]));
+// console.log("findSmallestNumber", findSmallestNumber([90, 50, 80, 70, 0]));
+// console.log(
+//   "findSmallestNumber",
+//   findSmallestNumber([3, 5, 55, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]),
+// );
+// console.log(
+//   "findSmallestNumber",
+//   findSmallestNumber([1, 2, 3, 4, 5, 6, 7, 8, 9]),
+// );
+// console.log(
+//   "findBigNumber",
+//   findBigNumber([177, 45, 8, 92, 12, 4, 15, 27, 30]),
+// );
+// console.log(
+//   "findBigNumber",
+//   findBigNumber([-1, -2, -3, -4, -5, -6, -7, -8, -9]),
+// );
+// console.log(
+//   "findBigNumber",
+//   findBigNumber([3, 5, 55, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]),
+// );
+// console.log(
+//   "findBigNumber",
+//   findBigNumber([177, 45, 8, 92, 12, 4, 15, 27, 30]),
+// );
+// console.log("findBigNumber", findBigNumber([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+// console.log(
+//   "findBigNumber",
+//   findBigNumber([-1, -2, -3, -4, -5, -6, -7, -8, -9]),
+// );
+// console.log("findBigNumber", findBigNumber([90, 50, 80, 70, 0]));
+
+// console.log(
+//   "findBigNumber",
+//   findBigNumber([3, 5, 55, 99, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]),
+// );
+
+// const string = "Hello world";
+// const letters = string.split("");
+// let invertedString = "";
+// for (const letter of letters) {
+//   const isEqual = letter === letter.toLowerCase();
+//   invertedString += isEqual ? letter.toUpperCase() : letter.toLowerCase();
+// }
+// console.log(invertedString);
+
+const changeCase = function changeCase(string) {
+  const letters = string.split("");
+  let invertedString = "";
+
+  for (const letter of letters) {
+    const isInLowerCase = letter === letter.toUpperCase();
+
+    invertedString += isInLowerCase
+      ? letter.toLowerCase()
+      : letter.toUpperCase();
+  }
+
+  // console.log(letters);
+  return invertedString;
+};
+
+console.log(changeCase("Hello world"));
+console.log(changeCase("I Am a student"));
+console.log(changeCase("WelcOme to the future"));
+console.log(changeCase("My naMe is John"));
+console.log(changeCase("Good morning"));
+console.log(changeCase("Zoo Is closed"));
+console.log(changeCase("Open the door"));
+console.log(changeCase("First of all, you need to learn JavaScript"));
+console.log(changeCase("Don't forget to practice"));
