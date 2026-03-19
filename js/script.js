@@ -767,28 +767,103 @@
 // }
 // console.log(invertedString);
 
-const changeCase = function changeCase(string) {
-  const letters = string.split("");
-  let invertedString = "";
+// const changeCase = function changeCase(string) {
+//   const letters = string.split("");
+//   let invertedString = "";
+//   console.log("🚀 ~ changeCase ~ invertedString:", invertedString)
+//   console.log("🚀 ~ changeCase ~ invertedString:", invertedString);
 
-  for (const letter of letters) {
-    const isInLowerCase = letter === letter.toUpperCase();
+//   for (const letter of letters) {
+//     const isInLowerCase = letter === letter.toUpperCase();
 
-    invertedString += isInLowerCase
-      ? letter.toLowerCase()
-      : letter.toUpperCase();
-  }
+//     invertedString += isInLowerCase
+//       ? letter.toLowerCase()
+//       : letter.toUpperCase();
+//   }
 
-  // console.log(letters);
-  return invertedString;
-};
+//   // console.log(letters);
+//   return invertedString;
+// };
 
-console.log(changeCase("Hello world"));
-console.log(changeCase("I Am a student"));
-console.log(changeCase("WelcOme to the future"));
-console.log(changeCase("My naMe is John"));
-console.log(changeCase("Good morning"));
-console.log(changeCase("Zoo Is closed"));
-console.log(changeCase("Open the door"));
-console.log(changeCase("First of all, you need to learn JavaScript"));
-console.log(changeCase("Don't forget to practice"));
+// console.log(changeCase("Hello world"));
+// console.log(changeCase("I Am a student"));
+// console.log(changeCase("WelcOme to the future"));
+// console.log(changeCase("My naMe is John"));
+// console.log(changeCase("Good morning"));
+// console.log(changeCase("Zoo Is closed"));
+// console.log(changeCase("Open the door"));
+// console.log(changeCase("First of all, you need to learn JavaScript"));
+// console.log(changeCase("Don't forget to practice"));
+
+//!======================================
+
+// Object;
+
+//* Example 1 - Основи об'єктів
+// Напиши скрипт, який для об'єкта user, послідовно:
+
+//1. додає поле mood зі значенням 'happy'
+//2. замінює значення hobby на 'skydiving'
+//3. замінює значення premium на false
+//4. виводить вміст об'єкта user у форматі ключ:значення використовуючи Object.keys() та for...of
+
+// const user = {
+//   name: "Mango",
+//   age: 20,
+//   hobby: "html",
+//   premium: true,
+// };
+
+// user.mood = "happy";
+// // user["mood"] = "happy";
+// user.hobby = "skydiving";
+// user.premium = false;
+
+// console.log("🚀 ~ user:", user);
+
+// for (const key in user) {
+//   const keys = user[key];
+//   // console.log("🚀 ~ keys:", keys);
+//   console.log(`${key}: ${keys}`);
+// }
+
+// for (const key of Object.keys(user)) {
+//   console.log(`${key}: ${user[key]}`);
+// }
+// console.log("🚀 ~ Object.keys(user):", Object.keys(user));
+// //* Example 2 - метод Object.values()
+// У нас є об'єкт, де зберігаються зарплати нашої команди. Напишіть код для підсумовування всіх зарплат і збережіть результат у змінній sum. Повинно вийти 390. Якщо об'єкт salaries порожній, то результат має бути 0.
+// const salaries = {
+//   John: 100,
+//   Ann: 160,
+//   Pete: 130,
+// };
+// const salariesArr = Object.values(salaries);
+// let sum = 0;
+// const key = Object.keys(salaries);
+// for (const salarie of salariesArr) {
+//   sum += salarie;
+// }
+// console.log("🚀 ~ key:", key);
+// console.log("🚀 ~ sum:", sum);
+
+//* Example 3 - Масив об'єктів
+// Напишіть функцію calcTotalPrice(stones, stoneName), яка приймає масив об'єктів та рядок з назвою каменю. Функція рахує і повертає загальну вартість каміння з таким ім'ям, ціною та кількістю з об'єкта
+
+// const stones = [
+//   { name: "Смарагд", price: 1300, quantity: 4 },
+//   { name: "Діамант", price: 2700, quantity: 3 },
+//   { name: "Сапфір", price: 400, quantity: 7 },
+//   { name: "Щебінь", price: 200, quantity: 2 },
+// ];
+// function calcTotalPrice(stones, stoneName) {
+//   for (const stone of stones) {
+//     if (stone.name === stoneName) {
+//       return stone.price * stone.quantity;
+//     }
+//   }
+//   return `Камінь ${stoneName} не знайдено`;
+// }
+
+// const total = calcTotalPrice(stones, "Сапфір");
+// console.log("🚀 ~ total:", total);
