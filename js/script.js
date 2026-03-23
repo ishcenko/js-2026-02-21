@@ -867,3 +867,111 @@
 
 // const total = calcTotalPrice(stones, "Сапфір");
 // console.log("🚀 ~ total:", total);
+
+//* Example 4 - Комплексні завдання
+// Напиши скрипт управління особистим кабінетом інтернет банку. Є об'єкт account в якому необхідно реалізувати методи для роботи з балансом та історією транзакцій.
+
+/*
+ * Типів транзакцій всього два.
+ * Можна покласти чи зняти гроші з рахунку.
+ */
+
+const TRANSACTION = {
+  DEPOSIT: "deposit",
+  WITHDRAW: "withdraw",
+};
+
+/* type, id. amount*/
+const account = {
+  balance: 0,
+  transactions: [],
+
+  createTransacton(amount, type) {
+    return {
+      amount,
+      type,
+      //   id: Date.now() + Math.round(Math.random() * 1000),
+      id: this.transactions.length + 1,
+    };
+  },
+
+  deposit(amount) {
+    const transaction = this.createTransacton(amount, TRANSACTION.DEPOSIT);
+    this.transactions.push(transaction);
+    this.balance += amount;
+  },
+
+  withdraw(amount) {
+    if (amount > this.balance) {
+      console.error("Недостатньо коштів на рахунку");
+      return;
+    }
+    this.balance -= amount;
+    const transction = this.createTransacton(amount, TRANSACTION.WITHDRAW);
+    this.transactions.push(transction);
+  },
+
+  getBalance() {
+    return this.balance;
+  },
+
+  getTransactoinDetails(id) {
+    for (const transaction of this.transactions) {
+      if (id === transaction.id) {
+        return transaction;
+      }
+    }
+    return `Транзакція з ID ${id} не знайдена`;
+  },
+
+  getTransactionTotal(type) {
+    let total = 0;
+
+    for (const transaction of this.transactions) {
+      if (type === transaction.type) {
+        total += transaction.amount;
+      }
+    }
+    return total;
+  },
+  balanceOfFunds(type) {
+    let total = 0;
+    for (const transaction of this.transactions) {
+      if (transaction.type === TRANSACTION.DEPOSIT) {
+        total += transaction.amount;
+      } else if (transaction.type === TRANSACTION.WITHDRAW) {
+        total -= transaction.amount;
+      }
+    }
+    return `Загальний баланс: ${total}`;
+  },
+};
+
+console.log(account.createTransacton(1000, TRANSACTION.DEPOSIT));
+
+console.log(account.createTransacton(100, TRANSACTION.DEPOSIT));
+
+account.deposit(1000);
+account.deposit(2000);
+account.deposit(3000);
+account.deposit(500);
+account.deposit(100);
+account.deposit(5000);
+
+account.withdraw(1000);
+account.withdraw(500);
+account.withdraw(100);
+account.withdraw(5001);
+console.log(account.transaction);
+console.log(account.getBalance());
+console.log(account.getTransactoinDetails(1));
+console.log(account.getTransactoinDetails(2));
+console.log(account.getTransactoinDetails(3));
+console.log(account.getTransactoinDetails(4));
+console.log(account.getTransactoinDetails(5));
+console.log(account.getTransactoinDetails(6));
+console.log(account.getTransactoinDetails(7));
+console.log(account.getTransactoinDetails(8));
+console.log("Поповнення", account.getTransactionTotal(TRANSACTION.DEPOSIT));
+console.log("Зняття", account.getTransactionTotal(TRANSACTION.WITHDRAW));
+console.log(account.balanceOfFunds());
