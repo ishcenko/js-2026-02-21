@@ -876,102 +876,179 @@
  * Можна покласти чи зняти гроші з рахунку.
  */
 
-const TRANSACTION = {
-  DEPOSIT: "deposit",
-  WITHDRAW: "withdraw",
-};
+// const TRANSACTION = {
+//   DEPOSIT: "deposit",
+//   WITHDRAW: "withdraw",
+// };
 
 /* type, id. amount*/
+// const account = {
+//   balance: 0,
+//   transactions: [],
+
+//   createTransacton(amount, type) {
+//     return {
+//       amount,
+//       type,
+//       //   id: Date.now() + Math.round(Math.random() * 1000),
+//       id: this.transactions.length + 1,
+//     };
+//   },
+
+// deposit(amount) {
+//   const transaction = this.createTransacton(amount, TRANSACTION.DEPOSIT);
+//   this.transactions.push(transaction);
+//   this.balance += amount;
+// },
+
+// withdraw(amount) {
+//   if (amount > this.balance) {
+//     console.error("Недостатньо коштів на рахунку");
+//     return;
+//   }
+//   this.balance -= amount;
+//   const transction = this.createTransacton(amount, TRANSACTION.WITHDRAW);
+//   this.transactions.push(transction);
+// },
+
+// getBalance() {
+//   return this.balance;
+// },
+
+// getTransactoinDetails(id) {
+//   for (const transaction of this.transactions) {
+//     if (id === transaction.id) {
+//       return transaction;
+//     }
+//   }
+//   return `Транзакція з ID ${id} не знайдена`;
+// },
+
+// getTransactionTotal(type) {
+//   let total = 0;
+
+//   for (const transaction of this.transactions) {
+//     if (type === transaction.type) {
+//       total += transaction.amount;
+//     }
+//   }
+//   return total;
+// },
+//   balanceOfFunds(type) {
+//     let total = 0;
+//     for (const transaction of this.transactions) {
+//       if (transaction.type === TRANSACTION.DEPOSIT) {
+//         total += transaction.amount;
+//       } else if (transaction.type === TRANSACTION.WITHDRAW) {
+//         total -= transaction.amount;
+//       }
+//     }
+//     return `Загальний баланс: ${total}`;
+//   },
+// };
+
+// console.log(account.createTransacton(1000, TRANSACTION.DEPOSIT));
+
+// console.log(account.createTransacton(100, TRANSACTION.DEPOSIT));
+
+// account.deposit(1000);
+// account.deposit(2000);
+// account.deposit(3000);
+// account.deposit(500);
+// account.deposit(100);
+// account.deposit(5000);
+
+// account.withdraw(1000);
+// account.withdraw(500);
+// account.withdraw(100);
+// account.withdraw(5001);
+// console.log(account.transaction);
+// console.log(account.getBalance());
+// console.log(account.getTransactoinDetails(1));
+// console.log(account.getTransactoinDetails(2));
+// console.log(account.getTransactoinDetails(3));
+// console.log(account.getTransactoinDetails(4));
+// console.log(account.getTransactoinDetails(5));
+// console.log(account.getTransactoinDetails(6));
+// console.log(account.getTransactoinDetails(7));
+// console.log(account.getTransactoinDetails(8));
+// console.log("Поповнення", account.getTransactionTotal(TRANSACTION.DEPOSIT));
+// console.log("Зняття", account.getTransactionTotal(TRANSACTION.WITHDRAW));
+// console.log(account.balanceOfFunds());
+
+// const foo = () => "Mango";
+
+// console.log(foo());
+
+//!=================================================================
+
+// Example 1 - Коллбек функції
+// Напишіть наступні функції:
+
+// createProduct(obj, callback) - приймає об'єкт товару без id, а також коллбек. Функція створює об'єкт товару, додаючи йому унікальний ідентифікатор у властивість id та викликає коллбек передаючи йому створений об'єкт.
+
+// logProduct(product) - колббек приймаючий об'єкт продукту і логуючий його в консоль
+
+// logTotalPrice(product) - колббек, що приймає об'єкт продукту і логіює загальну вартість товару в консоль
+
+// const apple = { name: "apple", price: 20, quantity: 5 };
+// const lemon = { name: "lemon", price: 10, quantity: 10 };
+// const orange = { name: "orange", price: 15, quantity: 7 };
+// const grapes = { name: "grapes", price: 25, quantity: 3 };
+// const peach = { name: "peach", price: 18, quantity: 8 };
+
+// createProduct(apple, logProduct);
+// createProduct(lemon, logProduct);
+// createProduct(orange, logProduct);
+// createProduct(grapes, logProduct);
+// createProduct(peach, logProduct);
+
+// function createProduct(obj, callback) {
+//   const newProduct = { ...obj, id: Date.now() };
+//   const logTotalPrice = {
+//     ...obj,
+//     totalPrice: newProduct.price * newProduct.quantity,
+//     id: Date.now(),
+//   };
+//   // console.log("🚀 ~ createProduct ~ logTotalPrice.tostalPrice:", logTotalPrice);
+//   // callback(newProduct);
+//   callback(logTotalPrice);
+// }
+
+// logProduct(apple);
+// logProduct(lemon);
+// logProduct(orange);
+// logProduct(grapes);
+// logProduct(peach);
+// logTotalPrice(apple);
+// logTotalPrice(lemon);
+
+// function logProduct(product) {
+//   console.log(product);
+// }
+
+// function logTotalPrice({ price, quantity }) {
+//   console.log(price * quantity);
+//   // return price * quantity;
+// }
+
+// Example 2 - Коллбек функції
+// Додайте об'єкт account методи withdraw(amount, onSuccess, onError) та deposit(amount, onSuccess, onError), де перший параметр це сума операції, а другий та третій - коллбеки.
+
+// Метод withdraw викликає onError якщо amount більше TRANSACTION_LIMIT або this.balance, і onSuccess в іншому випадку.
+
+// Метод deposit викликає onError якщо amount більше TRANSACTION_LIMIT або менше або дорівнює нулю, і onSuccess в іншому випадку.
+
+const TRANSACTION_LIMIT = 1000;
 const account = {
-  balance: 0,
-  transactions: [],
-
-  createTransacton(amount, type) {
-    return {
-      amount,
-      type,
-      //   id: Date.now() + Math.round(Math.random() * 1000),
-      id: this.transactions.length + 1,
-    };
-  },
-
-  deposit(amount) {
-    const transaction = this.createTransacton(amount, TRANSACTION.DEPOSIT);
-    this.transactions.push(transaction);
-    this.balance += amount;
-  },
-
-  withdraw(amount) {
-    if (amount > this.balance) {
-      console.error("Недостатньо коштів на рахунку");
-      return;
-    }
-    this.balance -= amount;
-    const transction = this.createTransacton(amount, TRANSACTION.WITHDRAW);
-    this.transactions.push(transction);
-  },
-
-  getBalance() {
-    return this.balance;
-  },
-
-  getTransactoinDetails(id) {
-    for (const transaction of this.transactions) {
-      if (id === transaction.id) {
-        return transaction;
-      }
-    }
-    return `Транзакція з ID ${id} не знайдена`;
-  },
-
-  getTransactionTotal(type) {
-    let total = 0;
-
-    for (const transaction of this.transactions) {
-      if (type === transaction.type) {
-        total += transaction.amount;
-      }
-    }
-    return total;
-  },
-  balanceOfFunds(type) {
-    let total = 0;
-    for (const transaction of this.transactions) {
-      if (transaction.type === TRANSACTION.DEPOSIT) {
-        total += transaction.amount;
-      } else if (transaction.type === TRANSACTION.WITHDRAW) {
-        total -= transaction.amount;
-      }
-    }
-    return `Загальний баланс: ${total}`;
-  },
+  username: "Jacob",
+  balance: 400,
+  withdraw(amount, onSuccess, onError) {},
+  deposit(amount, onSuccess, onError) {},
 };
-
-console.log(account.createTransacton(1000, TRANSACTION.DEPOSIT));
-
-console.log(account.createTransacton(100, TRANSACTION.DEPOSIT));
-
-account.deposit(1000);
-account.deposit(2000);
-account.deposit(3000);
-account.deposit(500);
-account.deposit(100);
-account.deposit(5000);
-
-account.withdraw(1000);
-account.withdraw(500);
-account.withdraw(100);
-account.withdraw(5001);
-console.log(account.transaction);
-console.log(account.getBalance());
-console.log(account.getTransactoinDetails(1));
-console.log(account.getTransactoinDetails(2));
-console.log(account.getTransactoinDetails(3));
-console.log(account.getTransactoinDetails(4));
-console.log(account.getTransactoinDetails(5));
-console.log(account.getTransactoinDetails(6));
-console.log(account.getTransactoinDetails(7));
-console.log(account.getTransactoinDetails(8));
-console.log("Поповнення", account.getTransactionTotal(TRANSACTION.DEPOSIT));
-console.log("Зняття", account.getTransactionTotal(TRANSACTION.WITHDRAW));
-console.log(account.balanceOfFunds());
+function handleSuccess(message) {
+  console.log(message);
+}
+function handleError(message) {
+  console.error(message);
+}
