@@ -1033,18 +1033,44 @@
 // }
 
 // Example 2 - Коллбек функції
-// Додайте об'єкт account методи withdraw(amount, onSuccess, onError) та deposit(amount, onSuccess, onError), де перший параметр це сума операції, а другий та третій - коллбеки.
+// Додайте об'єкт account методи withdraw(amount, onSuccess, onError) та deposit(amount, onSuccess, onError),
+// де перший параметр це сума операції, а другий та третій - коллбеки.
 
 // Метод withdraw викликає onError якщо amount більше TRANSACTION_LIMIT або this.balance, і onSuccess в іншому випадку.
 
-// Метод deposit викликає onError якщо amount більше TRANSACTION_LIMIT або менше або дорівнює нулю, і onSuccess в іншому випадку.
+// Метод deposit викликає onError якщо amount більше TRANSACTION_LIMIT або менше або дорівнює нулю, і onSuccess
+//  в іншому випадку.
 
-const TRANSACTION_LIMIT = 1000;
+const TRANSACTION_LIMIT = 10000;
 const account = {
   username: "Jacob",
-  balance: 400,
-  withdraw(amount, onSuccess, onError) {},
-  deposit(amount, onSuccess, onError) {},
+  balance: 40000,
+  withdraw(amount, onSuccess, onError) {
+    if (amount > TRANSACTION_LIMIT) {
+      onError(`Сума зняття перевищує ліміт транзакції ${TRANSACTION_LIMIT}`);
+    } else if (amount > this.balance) {
+      onError(`Сума зняття перевищує баланс рахунку ${this.balance}`);
+    } else {
+      this.balance -= amount;
+      onSuccess(
+        `Сума зняття ${amount} успішно здійснена. Поточний баланс: ${this.balance}`,
+      );
+    }
+  },
+  deposit(amount, onSuccess, onError) {
+    if (amount >= TRANSACTION_LIMIT) {
+      onError(
+        `Сума поповнення перевищує ліміт транзакції ${TRANSACTION_LIMIT}`,
+      );
+    } else if (amount <= 0) {
+      onError(`Сума поповнення повинна бути більше нуля`);
+    } else {
+      this.balance += amount;
+      onSuccess(
+        `Сума поповнення ${amount} успішно здійснена. Поточний баланс: ${this.balance}`,
+      );
+    }
+  },
 };
 function handleSuccess(message) {
   console.log(message);
@@ -1052,3 +1078,10 @@ function handleSuccess(message) {
 function handleError(message) {
   console.error(message);
 }
+
+account.withdraw(2000, handleSuccess, handleError);
+account.withdraw(500, handleSuccess, handleError);
+account.withdraw(800, handleSuccess, handleError);
+account.deposit(1500, handleSuccess, handleError);
+account.deposit(500, handleSuccess, handleError);
+account.deposit(10, handleSuccess, handleError);
