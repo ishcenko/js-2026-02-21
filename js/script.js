@@ -1041,47 +1041,88 @@
 // Метод deposit викликає onError якщо amount більше TRANSACTION_LIMIT або менше або дорівнює нулю, і onSuccess
 //  в іншому випадку.
 
-const TRANSACTION_LIMIT = 10000;
-const account = {
-  username: "Jacob",
-  balance: 40000,
-  withdraw(amount, onSuccess, onError) {
-    if (amount > TRANSACTION_LIMIT) {
-      onError(`Сума зняття перевищує ліміт транзакції ${TRANSACTION_LIMIT}`);
-    } else if (amount > this.balance) {
-      onError(`Сума зняття перевищує баланс рахунку ${this.balance}`);
-    } else {
-      this.balance -= amount;
-      onSuccess(
-        `Сума зняття ${amount} успішно здійснена. Поточний баланс: ${this.balance}`,
-      );
-    }
-  },
-  deposit(amount, onSuccess, onError) {
-    if (amount >= TRANSACTION_LIMIT) {
-      onError(
-        `Сума поповнення перевищує ліміт транзакції ${TRANSACTION_LIMIT}`,
-      );
-    } else if (amount <= 0) {
-      onError(`Сума поповнення повинна бути більше нуля`);
-    } else {
-      this.balance += amount;
-      onSuccess(
-        `Сума поповнення ${amount} успішно здійснена. Поточний баланс: ${this.balance}`,
-      );
-    }
-  },
-};
-function handleSuccess(message) {
-  console.log(message);
-}
-function handleError(message) {
-  console.error(message);
+// const TRANSACTION_LIMIT = 100000;
+// const account = {
+//   username: "Jacob",
+//   balance: 400000,
+//   withdraw(amount, onSuccess, onError) {
+//     if (amount > TRANSACTION_LIMIT) {
+//       onError(`Сума зняття перевищує ліміт транзакції ${TRANSACTION_LIMIT}`);
+//     } else if (amount > this.balance) {
+//       onError(`Сума зняття перевищує баланс рахунку ${this.balance}`);
+//     } else {
+//       this.balance -= amount;
+//       onSuccess(
+//         `Сума зняття ${amount} успішно здійснена. Поточний баланс: ${this.balance}`,
+//       );
+//     }
+//   },
+//   deposit(amount, onSuccess, onError) {
+//     if (amount >= TRANSACTION_LIMIT) {
+//       onError(
+//         `Сума поповнення перевищує ліміт транзакції ${TRANSACTION_LIMIT}`,
+//       );
+//     } else if (amount <= 0) {
+//       onError(`Сума поповнення повинна бути більше нуля`);
+//     } else {
+//       this.balance += amount;
+//       onSuccess(
+//         `Сума поповнення ${amount} успішно здійснена. Поточний баланс: ${this.balance}`,
+//       );
+//     }
+//   },
+// };
+// function handleSuccess(message) {
+//   console.log(`onSuccess: ${message}`);
+// }
+// function handleError(message) {
+//   console.error(`onError: ${message}`);
+// }
+
+// account.withdraw(2000, handleSuccess, handleError);
+// account.withdraw(500, handleSuccess, handleError);
+// account.withdraw(80000, handleSuccess, handleError);
+// account.deposit(1500, handleSuccess, handleError);
+// account.deposit(500, handleSuccess, handleError);
+// account.deposit(10, handleSuccess, handleError);
+
+//! ===================================
+
+//* Example 3 - Коллбек функції
+
+// Напишіть функцію each(array, callback), яка першим параметром очікує масив, а другим - функцію,
+// яка застосовується до кожного елемента масиву. Функція each повинна повернути новий масив,
+// елементами якого будуть результати виклику коллбека.
+
+function each(array, callback) {
+  const newArr = [];
+  for (const el of array) {
+    const result = callback(el);
+    newArr.push(result);
+  }
+  return newArr;
 }
 
-account.withdraw(2000, handleSuccess, handleError);
-account.withdraw(500, handleSuccess, handleError);
-account.withdraw(800, handleSuccess, handleError);
-account.deposit(1500, handleSuccess, handleError);
-account.deposit(500, handleSuccess, handleError);
-account.deposit(10, handleSuccess, handleError);
+function plusOne(num) {
+  return num + 1;
+}
+
+function multiTwo(num) {
+  return num * 2;
+}
+
+function sqrt(num) {
+  return Math.sqrt(num).toFixed();
+}
+
+const arr = [100, 200, 300, 400, 500];
+
+const newArr = each(arr, plusOne);
+
+const newArr2 = each(arr, multiTwo);
+
+const newArr3 = each(arr, sqrt);
+
+console.log(newArr);
+console.log(newArr2);
+console.log(newArr3);
