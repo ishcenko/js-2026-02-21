@@ -1094,35 +1094,140 @@
 // яка застосовується до кожного елемента масиву. Функція each повинна повернути новий масив,
 // елементами якого будуть результати виклику коллбека.
 
-function each(array, callback) {
-  const newArr = [];
-  for (const el of array) {
-    const result = callback(el);
-    newArr.push(result);
-  }
-  return newArr;
-}
+// function each(array, callback) {
+//   const newArr = [];
+//   for (const el of array) {
+//     const result = callback(el);
+//     newArr.push(result);
+//   }
+//   return newArr;
+// }
 
-function plusOne(num) {
-  return num + 1;
-}
+// function plusOne(num) {
+//   return num + 1;
+// }
 
-function multiTwo(num) {
-  return num * 2;
-}
+// function multiTwo(num) {
+//   return num * 2;
+// }
 
-function sqrt(num) {
-  return Math.sqrt(num).toFixed();
-}
+// function sqrt(num) {
+//   return Math.sqrt(num).toFixed();
+// }
 
-const arr = [100, 200, 300, 400, 500];
+// const arr = [100, 200, 300, 400, 500];
 
-const newArr = each(arr, plusOne);
+// const newArr = each(arr, plusOne);
 
-const newArr2 = each(arr, multiTwo);
+// const newArr2 = each(arr, multiTwo);
 
-const newArr3 = each(arr, sqrt);
+// const newArr3 = each(arr, sqrt);
 
-console.log(newArr);
-console.log(newArr2);
-console.log(newArr3);
+// console.log(newArr);
+// console.log(newArr2);
+// console.log(newArr3);
+
+// Петя біжить швидко, тому що він (this) намагається зловити поїзд.
+// const nameUser = {
+//   username: "Petya",
+//   showName() {
+//     console.log(this.username);
+//   },
+// };
+
+// nameUser.showName();
+
+//* Example 1 - Майстерня коштовностей
+// Напишіть метод calcTotalPrice(stoneName), який приймає назву каменю і розраховує та повертає загальну вартість
+// каменів з таким ім'ям, ціною та кількістю з властивості stones.
+
+// const chopShop = {
+//   stones: [
+//     { name: "Emerald", price: 1300, quantity: 4 },
+//     { name: "Diamond", price: 2700, quantity: 3 },
+//     { name: "Sapphire", price: 1400, quantity: 7 },
+//     { name: "Ruby", price: 800, quantity: 2 },
+//   ],
+//   calcTotalPrice(stoneName) {
+//     const stone = this.stones.find((stone) => stone.name === stoneName);
+//     if (stone) {
+//       return `Total price for ${stone.name}: ${stone.price * stone.quantity}`;
+//     } else {
+//       return `Камінь ${stoneName} не знайдено`;
+//     }
+//   },
+// };
+// console.log(chopShop.calcTotalPrice("Emerald"));
+// console.log(chopShop.calcTotalPrice("Diamond"));
+// console.log(chopShop.calcTotalPrice("Sapphire"));
+// console.log(chopShop.calcTotalPrice("Ruby"));
+// console.log(chopShop.calcTotalPrice("Topaz"));
+
+/*Example 2 - Телефонна книга
+Виконайте рефакторинг методів об'єкту phonebook щоб код запрацював.*/
+
+// const phonebook = {
+//   contacts: [],
+//   add(contact) {
+//     const newContact = {
+//       list: "default",
+//       ...contact,
+//       id: this.generateId(),
+//       createdAt: this.getDate(),
+//       showCtx() {
+//         console.log(this);
+//       },
+//     };
+//     this.contacts.push(newContact);
+//   },
+//   generateId() {
+//     return "_" + Math.random().toString(36).substr(2, 9);
+//   },
+//   getDate() {
+//     return Date.now();
+//   },
+// };
+
+// console.log(
+//   phonebook.add({
+//     name: "Mango",
+//     email: "mango@mail.com",
+//     list: "friends",
+//   }),
+// );
+// console.log(
+//   phonebook.add({
+//     name: "Poly",
+//     email: "poly@hotmail.com",
+//   }),
+// );
+// console.log(phonebook.contacts);
+
+/*Example 3 - Калькулятор
+Створіть об'єкт calculator з трьома методами:
+*/
+
+// read(a, b)- приймає два значення та зберігає їх як властивості об'єкта.
+// add() - повертає суму збережених значень.
+// mult() - перемножує збережені значення та повертає результат.
+const calculator = {
+  a: 0,
+  b: 0,
+  read(a, b, c) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
+  },
+  add() {
+    return this.a + this.b * this.c;
+  },
+  mult() {
+    return this.a * this.b * this.c;
+  },
+};
+
+calculator.read(10, 20, 5);
+console.log(calculator.add());
+// console.log(calculator.mult());
+// console.log(calculator.mult());
+console.log(calculator.mult());
