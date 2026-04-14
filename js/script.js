@@ -1210,24 +1210,24 @@
 // read(a, b)- приймає два значення та зберігає їх як властивості об'єкта.
 // add() - повертає суму збережених значень.
 // mult() - перемножує збережені значення та повертає результат.
-const calculator = {
-  a: 0,
-  b: 0,
-  read(a, b, c) {
-    this.a = a;
-    this.b = b;
-    this.c = c;
-  },
-  add() {
-    return this.a + this.b * this.c;
-  },
-  mult() {
-    return this.a * this.b * this.c;
-  },
-};
+// const calculator = {
+//   a: 0,
+//   b: 0,
+//   read(a, b, c) {
+//     this.a = a;
+//     this.b = b;
+//     this.c = c;
+//   },
+//   add() {
+//     return this.a + this.b * this.c;
+//   },
+//   mult() {
+//     return this.a * this.b * this.c;
+//   },
+// };
 
-calculator.read(10, 20, 5);
-console.log(calculator.add());
+// calculator.read(10, 20, 5);
+// console.log(calculator.add());
+// // console.log(calculator.mult());
+// // console.log(calculator.mult());
 // console.log(calculator.mult());
-// console.log(calculator.mult());
-console.log(calculator.mult());
